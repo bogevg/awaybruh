@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Мой сайтик</title>
+    <script src="app.js" defer=""></script> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+    
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/sldr-22.jpg">
+        </div>
+        <h1 class="title">Лучший фотограф Дуся</h1>
+
+        <nav>
+            <ul>
+            	<li><a href="#sec1">Обо мне</a></li>
+                <li><a href="#sec2">Мои работы</a></li>
+            	<li><a href="#footer">Как связаться</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slider-container">
+	     <div class="photo-slider">
+	          <img src="img/sldr-1.jpg"height="100px"   onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-2.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-3.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-4.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	    </div>
+	    <button class="prev-button" aria-label="вперед">&lt;</button>
+	    <button class="next-button" aria-label="назад">&gt</button>  
+	</div>
+
+    <section id ="sec1">
+        <div class="about_me">
+            <h2>Немного обо мне:</h2>
+            <p>
+                Привет! Я Дуся, я могу превратить момент из жизни во что-то физическое, в то, чем ты сможешь поделиться с другими.
+            </p>
+            <p>Я вижу то, что ты чувствуешь.</p>
+            <p>Больше всего люблю и умею репортажи.</p>
+        </div>
+    </section>
+
+    <section id = "sec2">
+        <div class="column-container">           	
+            <div class="column">
+            	<img src="img/glr-6.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-7.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-5.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+        </div>
+
+        <div class="column-container">           	
+            <div class="column">
+            	<img src="img/glr-2.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-3.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-4.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+        </div>
+
+    </section>
+
+    <footer id ="footer" style="width: 100%;">
+        <div class="social-icons">
+            <a href="https://t.me/awaybruh" class="social-icon">tg</a>
+        	<a href="https://vk.com/ph.awaybruh" class="social-icon">vk</a>
+        	<a href="https://awaybruh.wfolio.pro" class="social-icon">wfolio</a>
+        </div>
+        	  
+    </footer>
+        
+
+    
+</body>
+
+</html>
