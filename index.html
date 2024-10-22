@@ -1,197 +1,116 @@
-header {
-    background-color: #1e1e1e;
-    color: #fff;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Мой сайтик</title>
+    <script src="app.js" defer=""></script> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+    
 
-  
-.logo img {
-    width: 90px;
-    height: 90px;
-    margin-right: 10px;
-  }
-  
-  
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/sldr-22.jpg">
+        </div>
+        <h1 class="title">Лучший фотограф Дуся</h1>
 
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  nav a:hover {
-    color: #ff6600;
-  }
-  
-  body {
-  background: linear-gradient(black, rgb(116, 3, 3));
-  background-attachment: fixed; /* Фиксируем фон */ 
-  width: 85%; 
-  margin-left:auto; 
-  margin-right:auto;
+        <nav>
+            <ul>
+            	<li><a href="#sec1">Обо мне</a></li>
+                <li><a href="#sec2">Мои работы</a></li>
+            	<li><a href="#footer">Как связаться</a></li>
+            </ul>
+        </nav>
+    </header>
 
-}
+    <div class="slider-container">
+	     <div class="photo-slider">
+	          <img src="img/sldr-1.jpg"height="100px"   onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-2.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-3.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	          <img src="img/sldr-4.jpg"  height="100px" onclick="openFullscreenImage(this)">
+	    </div>
+	    <button class="prev-button" aria-label="вперед">&lt;</button>
+	    <button class="next-button" aria-label="назад">&gt</button>  
+	</div>
 
+    <section id ="sec1">
+        <div class="about_me">
+            <h2>Немного обо мне:</h2>
+            <p>
+                Привет! Я Дуся, я могу превратить момент из жизни во что-то физическое, в то, чем ты сможешь поделиться с другими.
+            </p>
+            <p>Я вижу то, что ты чувствуешь.</p>
+            <p>Больше всего люблю и умею репортажи.</p>
+        </div>
+    </section>
 
+    <section id = "sec2">
+        <div class="column-container">           	
+            <div class="column">
+            	<img src="img/glr-6.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
 
-/* Стили слайдера */
-.page-title {
-    text-align: center;
-  }
-  
-.slider-container {
-    position: relative;
-    width: 80%;
-    height: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  
-.photo-slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-  
-.photo-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-  
-.prev-button, .next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  color: red;
-}
-  
-.prev-button {
-    left: -10px;
-  
-}
-  
-.next-button {
-    right: -10px;
-  
-  }
+            <div class="column">
+            	<img src="img/glr-7.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-5.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+        </div>
+
+        <div class="column-container">           	
+            <div class="column">
+            	<img src="img/glr-2.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-3.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+
+            <div class="column">
+            	<img src="img/glr-4.jpg" class="pic" onclick="openFullscreenImage(this)">
+            </div>
+        </div>
+
+        <div id="fullscreen-container" class="hidden">
+	      <span class="close-button" onclick="closeFullscreenImage()">&times;</span>
+	      <img src="" alt="Полноэкранное изображение" id="fullscreen-image">
+	    </div>
+            
+
+    </section>
 
 
 
-/* Стили текста о нас */
-.about_me{
-    color: #fff;
-    width:80%;
-    font-size:18px;
-    text-align:center; 
-    font-family:Verdana, Geneva, sans-serif;
-    margin-left:auto; 
-    margin-right:auto;  
-  }
-  
-  /* Стили галереи */
-  .column-container {
-    display: flex; /* Размещение элементов в строку */
-    justify-content: space-between; /* Распределение пространства между колонками */
-    color: #fff;
-  }
-  
-  .pic {
-    width: 100%;
-    height: 100%;
-  }
-  
-  
- /* Стили для каждой колонки */
-.column {
-    flex: 1; /* Равномерное распределение ширины между колонками */
-    margin: 10px; /* Отступ между колонками */
-    padding: 10px; /* Внутренний отступ внутри каждой колонки */
-    border: 1px solid #a7401b; /* Граница для каждой колонки */
-    border-radius: 5px;
-    background: #333333;
-  }
-  
-  .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
-  a {
-    text-decoration: none; 
-    color: white; 
-    font-weight: bold; 
-    transition: color 0.3s ease; /* Добавляем плавную анимацию при наведении */
-  }
-  
-  a:hover {
-    color: #8b1212; /* При наведении меняем цвет*/
-  }
+    <!-- добавление элемента div -->
+<div class="g-recaptcha" data-sitekey="6LdwUmgqAAAAAIF95xkNTy9AQpki3qdlPilJLDGm"></div>
 
-  /* Стили для контейнера полноэкранного изображения */
-#fullscreen-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 999;
-  text-align: center;
-}
+<!-- элемент для вывода ошибок -->
+<div class="text-danger" id="recaptchaError"></div>
 
-#fullscreen-image {
-  max-width: 90%;
-  max-height: 90%;
-  margin: auto;
-  display: block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
+<!-- js-скрипт гугл капчи -->
+<script src='https://www.google.com/recaptcha/api.js?6LdwUmgqAAAAAIF95xkNTy9AQpki3qdlPilJLDGm'></script>
 
-/* Стили для кнопки закрытия */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  color: #fff;
-  cursor: pointer;
-}
 
-  
-  
-/* Стили контактов */
-footer {
-    background-color: #2f2c2c; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    padding: 10px 0;
-    text-align: center;
-    width:100%;
-  }
-  
-  
+
+
+
+    <footer id ="footer" style="width: 100%;">
+        <div class="social-icons">
+            <a href="https://t.me/awaybruh" class="social-icon">tg</a>
+        	<a href="https://vk.com/ph.awaybruh" class="social-icon">vk</a>
+        	<a href="https://awaybruh.wfolio.pro" class="social-icon">wfolio</a>
+        </div>
+        	  
+    </footer>
+        
+
+    
+</body>
+
+</html>
