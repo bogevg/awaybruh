@@ -7,9 +7,19 @@ let slideIndex = 0;
 
 updateSlider();
 
+
+
+
+
 // Устанавливаем обработчики событий для кнопок
 prevButton.addEventListener('click', showPreviousSlide);
 nextButton.addEventListener('click', showNextSlide);
+
+
+
+
+
+
 
 // Функция для показа предыдущего слайда
 function showPreviousSlide() {
@@ -47,6 +57,22 @@ function closeFullscreenImage() {
     const fullscreenContainer = document.getElementById('fullscreen-container');
     fullscreenContainer.style.display = 'none';
 }
+    
+
+// Автоматическое переключение слайдов
+let autoSlideInterval = setInterval(showNextSlide, 2000); // 4 секунды
+
+// Остановка автоматического переключения при наведении
+slider.addEventListener('mouseover', () => {
+    clearInterval(autoSlideInterval);
+});
+
+// Возобновление автоматического переключения при уводе курсора
+slider.addEventListener('mouseout', () => {
+    autoSlideInterval = setInterval(showNextSlide, 4000);
+});
+
+
 
 
 
@@ -81,5 +107,4 @@ if ($data.msg) {
   // вывести её в элемент у которого id=recaptchaError
   $('#recaptchaError').text($data.msg);
 }
-    
 
